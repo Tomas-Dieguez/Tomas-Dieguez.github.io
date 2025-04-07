@@ -1,5 +1,38 @@
-<h2>HTML embed</h2>
-<iframe src="https://player-staging.working.k.zype.com/embed/67dda40c7e3dfc00018dec07.html?api_key=jy6ZL2l7LycRj1MjGaeQaUAFGyr_0RGI6fHFccv6W3W2ZpfH0a7_d7DytKOc0Pnz&autoplay=true&controls=true" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81E2NF0BF5"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-<h2>JS embed</h2>
-<div id="zype_67dda40c7e3dfc00018dec07"></div><script src="https://player-staging.working.k.zype.com/embed/67dda40c7e3dfc00018dec07.js?api_key=jy6ZL2l7LycRj1MjGaeQaUAFGyr_0RGI6fHFccv6W3W2ZpfH0a7_d7DytKOc0Pnz&autoplay=true&controls=true" type="text/javascript"></script>
+    gtag('config', 'G-81E2NF0BF5');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zype Video Player</title>
+</head>
+<body>
+    <!-- HTML Embed Option -->
+    <section id="html-embed">
+        <h2>HTML embed</h2>
+        <iframe 
+            src="https://player-staging.working.k.zype.com/embed/67dda40c7e3dfc00018dec07.html?api_key=jy6ZL2l7LycRj1MjGaeQaUAFGyr_0RGI6fHFccv6W3W2ZpfH0a7_d7DytKOc0Pnz&autoplay=true&controls=true" 
+            width="560" 
+            height="315" 
+            frameborder="0" 
+            allowfullscreen="allowfullscreen">
+        </iframe>
+    </section>
+
+    <!-- JS Embed Option -->
+    <section id="js-embed">
+        <h2>JS embed</h2>
+        <div id="zype_67dda40c7e3dfc00018dec07"></div>
+        <script src="https://player-staging.working.k.zype.com/embed/67dda40c7e3dfc00018dec07.js?api_key=jy6ZL2l7LycRj1MjGaeQaUAFGyr_0RGI6fHFccv6W3W2ZpfH0a7_d7DytKOc0Pnz&autoplay=true&controls=true" type="text/javascript"></script>
+    </section>
+</body>
+</html>
