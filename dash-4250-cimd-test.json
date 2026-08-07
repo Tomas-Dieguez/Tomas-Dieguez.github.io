@@ -1,0 +1,5 @@
+{
+  "client_id": "https://raw.githubusercontent.com/Tomas-Dieguez/Tomas-Dieguez.github.io/main/dash-4250-cimd-test.json",
+  "client_name": "DASH-4250 CIMD test client",
+  "redirect_uris": ["https://example.com/callback"]
+}
